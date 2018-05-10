@@ -28,12 +28,12 @@ client.on('guildCreate', guild => {
 
 client.on('guildMemberAdd', member => {
   let guild = member.guild;
-  guild.defaultChannel.sendMessage(`Please welcome ${member.user.username} to the server!`);
+  guild.defaultChannel.sendMessage(`Welcome ${member.user.username} to the server!`);
 });
 
 client.on('guildMemberRemove', member => {
   let guild = member.guild;
-  guild.defaultChannel.sendMessage(`Please say goodbye to ${member.user.username} we will miss you!`);
+  guild.defaultChannel.sendMessage(`Goodbye ${member.user.username}, we will miss you!`);
 });
 
 client.on('guildMemberSpeaking', (member, speaking) => {
@@ -175,4 +175,4 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
-client.login(token);
+client.login(NDQyNzQ0MjIzMjAxMDk5Nzc3.DdY1wg.EC7ot5iy73hPObgNW8AiJuU1kHg);
