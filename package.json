@@ -1,12 +1,12 @@
 {
-  "name": "Tutorial-Bot",
-  "version": "1.2.5",
-  "description": "An Idiot's Guide tutorial Bot",
+  "name": "ModBot",
+  "version": "1.0.0",
+  "description": "A Mod Bot",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "An Idiot's Guide",
+  "author": "AK4L1FE",
   "license": "MIT",
   "dependencies": {
     "chalk": "^1.1.3",
