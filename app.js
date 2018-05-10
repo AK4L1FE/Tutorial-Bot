@@ -26,14 +26,16 @@ client.on('guildCreate', guild => {
   guild.defaultChannel.sendMessage(`I have joined ${guild.name}`);
 });
 
-client.on('guildMemberAdd', member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage(`Welcome ${member.user.username} to the server!`);
+client.on(`guildMemberAdd`, async member => {
+  console.log(`${member.id} has joined the server!`);
+  let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
+  welcomechannel.send(`Wow, ${member} has joined the server!`);
 });
 
-client.on('guildMemberRemove', member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage(`Goodbye ${member.user.username}, we will miss you!`);
+client.on(`guildMemberRemove`, async member => {
+  console.log(`${member.id} has left the server!`);
+  let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
+  welcomechannel.send(`Sad story, ${member} has left the server.`);
 });
 
 client.on('guildMemberSpeaking', (member, speaking) => {
