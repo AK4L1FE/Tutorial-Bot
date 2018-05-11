@@ -26,13 +26,13 @@ client.on('guildCreate', guild => {
   guild.defaultChannel.sendMessage(`I have joined ${guild.name}`);
 });
 
-client.on(`guildMemberAdd`, async member => {
+client.on('guildMemberAdd', member => {
   console.log(`${member.id} has joined the server!`);
   let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
   welcomechannel.send(`Wow, ${member} has joined the server!`);
 });
 
-client.on(`guildMemberRemove`, async member => {
+client.on(`guildMemberRemove`, member => {
   console.log(`${member.id} has left the server!`);
   let welcomechannel = member.guild.channels.find(`name`, "welcome_leave");
   welcomechannel.send(`Sad story, ${member} has left the server.`);
