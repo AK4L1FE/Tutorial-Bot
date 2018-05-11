@@ -27,7 +27,7 @@ bot.on('guildMemberAdd', member => {
         .addField(':bust_in_silhouette: | name : ', `${member}`)
         .addField(':microphone2: | Welcome!', `Welcome to the server, ${member}`)
         .addField(':id: | User :', "**[" + `${member.id}` + "]**")
-        .addField(':family_mwgb: | Your are the member', `${member.guild.memberCount}`)
+        .addField(':family_mwgb: | You are the member', `${member.guild.memberCount}`)
         .addField("Name", `<@` + `${member.id}` + `>`, true)
         .addField('Server', `${member.guild.name}`, true )
         .setFooter(`**${member.guild.name}**`)
