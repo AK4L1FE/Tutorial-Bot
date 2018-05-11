@@ -1,44 +1,57 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
-const token = require('./settings.json').token;
+const bot = new Discord.Client();
 
-client.on('ready',() => {
-	console.log('I\'m Online\nI\'m Online');
+bot.on('ready', () => {
+    console.log("Turning On Bot")
+    bot.user.setActivity("New Users", {type: 2});
 });
 
-var prefix = "~"
-client.on('message', message => {
-	let args = message.content.split(' ').slice(1);
-	var result = args.join(' ');
+bot.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'welcome-leave');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField(':bust_in_silhouette: | name : ', `${member}`)
+        .addField(':microphone2: | Welcome!', `Welcome to the server, ${member}`)
+        .addField(':id: | User :', "**[" + `${member.id}` + "]**")
+        .addField(':family_mwgb: | You are the member', `${member.guild.memberCount}`)
+        .addField("Name", `<@` + `${member.id}` + `>`, true)
+        .addField('Server', `${member.guild.name}`, true )
+        .setFooter(`**${member.guild.name}**`)
+        .setTimestamp()
 
-	if (!message.content.startsWith(prefix)) return;
-	if (message.author.bot) return;
-
-	if (message.content.startsWith(prefix + 'ping')) {
-		message.channel.sendMessage(`Pong! \`${Date.now() - message.createdTimestamp} ms\``);
-	} else
-
-	if (message.content.startsWith(prefix + 'send')) {
-		client.channels.get('245491978601627648').sendMessage('Hello from second channel!');
-	} else
-
-	if (message.content.startsWith(prefix + 'setgame')) {
-		if (!result) {
-			result = null;
-		}
-		client.user.setGame(result);
-	} else
-
-	if (message.content.startsWith(prefix + 'setstatus')) {
-		if (!result) {
-			result = 'online';
-		}
-		client.user.setStatus(result);
-	} else
-
-	if (message.content.startsWith(prefix + 'foo')) {
-		message.channel.sendMessage('bar');
-	}
+        channel.sendEmbed(embed);
 });
 
-client.login(token);
+bot.on('guildMemberAdd', member => {
+
+    console.log(`${member}`, "has joined" + `${member.guild.name}`)
+
+});
+
+bot.on('guildMemberRemove', member => {
+    let channel = member.guild.channels.find('name', 'welcome-leave');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('Name:', `${member}`)
+        .addField('Has Let the Server', ';(')
+        .addField('Bye Bye :(', 'We will all miss you!')
+        .addField('The server now as', `${member.guild.memberCount}` + " members")
+        .setFooter(`**${member.guild.name}`)
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
+bot.on('guildMemberRemove', member => {
+    console.log(`${member}` + "has left" + `${member.guild.name}` + "Sending leave message now")
+    console.log("Leave Message Sent")
+});
+
+const token = process.env.TOKEN;
+bot.login("NDQyNzQ0MjIzMjAxMDk5Nzc3.DdeUOg.EC7jrRhV8_xbYQwTILKSoUsQibA")
