@@ -54,4 +54,4 @@ bot.on('guildMemberRemove', member => {
 });
 
 const token = process.env.TOKEN;
-bot.login("NDQyNzQ0MjIzMjAxMDk5Nzc3.DdeUOg.EC7jrRhV8_xbYQwTILKSoUsQibA")
+bot.login('NDQyNzQ0MjIzMjAxMDk5Nzc3.DdeUOg.EC7jrRhV8_xbYQwTILKSoUsQibA')
