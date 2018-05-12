@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
   .setTimestamp()
   .addField('Action:', 'Warning')
   .addField('User:', `${user.username}#${user.discriminator}`)
-  .addField('Modrator:', `${message.author.username}#${message.author.discriminator}`)
+  .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
   .addField('Reason', reason);
   return client.channels.get(modlog.id).sendEmbed(embed);
 };
