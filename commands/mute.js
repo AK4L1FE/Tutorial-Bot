@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     .setTimestamp()
     .addField('Action:', 'Un/Mute')
     .addField('User:', `${user.username}#${user.discriminator} (${user.id})`)
-    .addField('Modrator:', `${message.author.username}#${message.author.discriminator}`)
+    .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
     .addField('Reason', reason);
 
   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('I do not have the correct permissions.').catch(console.error);
