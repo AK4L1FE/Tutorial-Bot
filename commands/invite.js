@@ -12,6 +12,6 @@ exports.conf = {
 
 exports.help = {
   name: 'invite',
-  description: 'Sends the bots invite link',
+  description: 'Sends the bots invite link.',
   usage: 'invite'
 };
