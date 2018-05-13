@@ -1,15 +1,24 @@
-const Discord = require('discord.js');
+bot.on('guildMemberRemove', member => {
+    let channel = member.guild.channels.find('name', 'welcome-leave');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('Name:', `${member}`)
+        .addField('Has Let the Server', ';(')
+        .addField('Bye Bye :(', 'We will all miss you!')
+        .addField('The server now as', `${member.guild.memberCount}` + " members")
+        .setFooter(`**${member.guild.name}`)
+        .setTimestamp()
 
-module.exports = (guild, user) => {
+        channel.sendEmbed(embed);
+});
 
-  guild.defaultChannel.send(`${user.tag} was just unbanned!`);
-  const embed = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .setDescription(`**Action:** Unban\n**Target:** ${user.tag}\n**Moderator:** ${guild.client.unbanAuth.tag}\n**Reason:** ${guild.client.unbanReason}`);
-  return guild.channels.get(guild.channels.find('name', 'mod-log').id).send({embed});
-
-};
+bot.on('guildMemberRemove', member => {
+    console.log(`${member}` + "has left" + `${member.guild.name}` + "Sending leave message now")
+    console.log("Leave Message Sent")
+});
 
 
 
