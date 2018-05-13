@@ -1,3 +1,5 @@
+const bot = new Discord.client()
+
 bot.on('guildMemberRemove', member => {
     let channel = member.guild.channels.find('name', 'welcome-leave');
     let memberavatar = member.user.avatarURL
