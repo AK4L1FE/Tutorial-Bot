@@ -12,10 +12,11 @@ const log = message => {
 
 const bot = new Discord.Client();
 
-bot.on('ready', () => {
-    console.log("Turning On Bot")
-    bot.user.setActivity(";help", {type: 2});
-});
+ bot.on("ready", async () => {
+    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+     bot.user.setActivity(`${bot.user.username} is online on ${bot.guilds.size} servers!`, {type: 2});
+     
+     });
 
 bot.on('guildMemberAdd', member => {
     let channel = member.guild.channels.find('name', 'welcome-leave');
