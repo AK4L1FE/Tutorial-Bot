@@ -1,5 +1,6 @@
 module.exports = (guild, user) => {
-  guild.defaultChannel.send(`${user.username} was just banned!`);
+  let welcomechannel = member.guild.channels.find(`name`, "ytwitch-welcome-leave");
+  guild.welcomechannel.send(`${user.username} was just banned!`);
 };
 
 
