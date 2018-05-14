@@ -33,6 +33,6 @@ exports.conf = {
 
 exports.help = {
   name: 'ban',
-  description: 'Bans the mentioned user.',
+  description: 'Bans the mentioned user, needing to have a mod-log text channel.',
   usage: 'ban [mention] [reason]'
 };
