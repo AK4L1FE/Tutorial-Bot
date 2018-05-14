@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
     .addField('Reason', reason);
 
     let incidentchannel = message.guild.channels.find(`name`, "mod-log");
-    if(!incidentchannel) return message.channel.send("Can't find a mod-log channel, if you want to see the logs.");
+    if(!incidentchannel) return message.channel.send("Can't find a mod-log channel.");
 
     incidentchannel.send(embed);
 };
