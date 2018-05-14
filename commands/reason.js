@@ -37,3 +37,9 @@ exports.conf = {
   aliases: [],
   permLevel: 2
 };
+
+exports.help = {
+  name: 'reason',
+  description: 'Updates an unset moderator action.',
+  usage: 'reason <case number> <new reason>'
+};
