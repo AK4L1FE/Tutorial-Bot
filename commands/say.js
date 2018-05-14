@@ -13,6 +13,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'Say',
-  description: 'Says stuff.'
+  name: 'say',
+  description: 'Says what you type in.',
+  usage: 'say {message}'
 }
