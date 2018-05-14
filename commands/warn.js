@@ -13,7 +13,11 @@ exports.run = (client, message, args) => {
   .addField('User:', `${user.username}#${user.discriminator}`)
   .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
   .addField('Reason', reason);
-  return client.channels.get(modlog.id).sendEmbed(embed);
+
+    let incidentchannel = message.guild.channels.find(`name`, "mod-log");
+    if(!incidentchannel) return message.channel.send("Can't find a mod-log channel.");
+
+    incidentchannel.send(embed);
 };
 
 exports.conf = {
@@ -25,6 +29,6 @@ exports.conf = {
 
 exports.help = {
   name: 'warn',
-  description: 'Issues a warning to the mentioned user.',
+  description: 'Issues a warning to the mentioned user, needing to have a mod-log channel.',
   usage: 'warn [mention] [reason]'
 }
