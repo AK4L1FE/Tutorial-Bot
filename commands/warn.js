@@ -18,7 +18,11 @@ exports.run = (client, message, args) => {
     if(!incidentchannel) return message.channel.send("Can't find a mod-log channel.");
 
     incidentchannel.send(embed);
-
+  
+    let generalchannel = message.guild.channel.find(`name`, "general");
+    if(!generalchannel) return message.channel.send("Can't find a general channel.");
+    
+    generalchannel.send(`@${user.username}#${user.discriminator} warned by`, reason);
 };
 
 exports.conf = {
