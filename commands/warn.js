@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
   .setColor(0x00AE86)
   .setTimestamp()
   .addField('Action:', 'Warning')
-  .addField('User:', `${user.username}#${user.discriminator}`)
+  .addField('User:', `@${user.id}#${user.discriminator}`)
   .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
   .addField('Reason', reason);
 
