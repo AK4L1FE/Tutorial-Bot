@@ -9,7 +9,7 @@ exports.run = (client, message, params) => {
     let command = params[0];
     if (client.commands.has(command)) {
       command = client.commands.get(command);
-      message.channel.send('Check your DMs for the command you have mentioned above.');
+      return message.channel.send('check your DMs for the command you have mentioned above.');
       message.author.send(`= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`, {code:'asciidoc'});
     }
   }
