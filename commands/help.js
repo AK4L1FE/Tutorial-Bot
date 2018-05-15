@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
     if (client.commands.has(command)) {
       command = client.commands.get(command);
       message.author.send(`= ${command.help.name} = \n${command.help.description}\nusage::${command.help.usage}`, {code:'asciidoc'});
-      return message.reply('check your DMs for the command you have mentioned above.');
+      message.reply('check your DMs for the command you have mentioned above.');
     }
   }
 };
