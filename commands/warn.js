@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
 
     incidentchannel.send(embed);
   
-    let generalchannel = message.guild.channel.find(`name`, "general");
+    let generalchannel = message.guild.channels.find(`name`, "general");
     if(!generalchannel) return message.channel.send("Can't find a general channel.");
     
     generalchannel.send(`@${user.username}#${user.discriminator} warned by`, reason);
