@@ -10,8 +10,8 @@ exports.run = (client, message, args) => {
   .setColor(0x00AE86)
   .setTimestamp()
   .addField('Action:', 'Warning')
-  .addField('User:', '@${user.username}#${user.discriminator}')
-  .addField('Moderator:', '${message.author.username}#${message.author.discriminator}')
+  .addField('User:', `@${user.username}#${user.discriminator}`)
+  .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
   .addField('Reason', reason);
 
     let incidentchannel = message.guild.channels.find(`name`, "mod-log");
