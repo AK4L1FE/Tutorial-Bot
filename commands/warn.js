@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
     if(!incidentchannel) return message.channel.send("Can't find a mod-log channel.");
 
     incidentchannel.send(embed);
-    return message.reply(`@${user.username}#${user.discriminator}`);
+    return message.send(`@${user.username}#${user.discriminator}, you were warned for` reason);
 };
 
 exports.conf = {
