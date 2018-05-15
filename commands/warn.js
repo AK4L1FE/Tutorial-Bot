@@ -19,8 +19,8 @@ exports.run = (client, message, args) => {
     if(!incidentchannel) return message.channel.send("Can't find a mod-log channel.");
 
     incidentchannel.send(embed);
-  
-    message.user.send(embed);
+
+
 };
 
 exports.conf = {
