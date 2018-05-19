@@ -9,13 +9,13 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
-client.on('guildMemberAdd', (member, guild) => {
+client.on('guildMemberAdd', (member, guild, name) => {
   const channel = member.guild.channels.find('name', 'welcome');
   if (!channel) return;
-  channel.send(`Welcome to ${guild.name}, ${member}`);
+  channel.send(`Welcome to ${guild}, ${member}`);
 });
 
-client.on('guildMemberRemove', (member, guild) => {
+client.on('guildMemberRemove', (member, guild, name) => {
   const channel = member.guild.channels.find('name', 'welcome');
   if (!channel) return;
   channel.send(`Goodbye, ${member}, we will miss you`);
