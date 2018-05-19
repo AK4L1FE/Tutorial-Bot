@@ -33,16 +33,16 @@ client.on("message", async (message) => {
 	let args = message.content.split(" ").slice(1);
 	
 	if (command === "ping") {
-		message.channel.send(`Pong! Time took: ${Date.now() - message.createdTimestamp} ms`);
+		channel.sendMessage(`Pong! Time took: ${Date.now() - message.createdTimestamp} ms`);
 	} else
 
 	if (command === "say") {
 		message.delete()
-		message.channel.send(args.join(" "));
+		channel.sendMessage(args.join(" "));
 	} else
 
 	if (command == "help") {
-		message.channel.send("Command List: gt!help: Will give the current command list; gt!ping: WIll show the ping time for the bot; gt!say [text]: Will make the bot say something; gt!announcement [text]: Will make the bot say an announcement and tag everyone.")
+		channel.sendMessage("Command List: gt!help: Will give the current command list; gt!ping: WIll show the ping time for the bot; gt!say [text]: Will make the bot say something; gt!announcement [text]: Will make the bot say an announcement and tag everyone.")
 	}
 
 });
