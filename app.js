@@ -1,21 +1,20 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const bot = new Discord.Client();
 
 
 const newUsers = [];
 
-client.on("ready", (user, bot, client) => {
+client.on("ready", (user, client) => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
-client.on("guildCreate", (guild, user, client, bot) => {
+client.on("guildCreate", (guild, user, client) => {
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
-client.on("guildDelete", (guild, user, client, bot) => {
+client.on("guildDelete", (guild, user, client) => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
