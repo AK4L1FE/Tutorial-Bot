@@ -38,21 +38,11 @@ client.on("message", async (message) => {
 
 	if (command === "say") {
 		message.delete()
-        const embed = new Discord.RichEmbed()
-		.setColor(0x954D23)
-		.setDescription(message.author.username + " says: " + args.join(" "));
-		message.channel.send({embed})
+		message.channel.send(args.join(" "));
 	} else
 
 	if (command == "help") {
-		const embed = new Discord.RichEmbed()
-		.setColor(0x954D23)
-		.setTitle("Command List:")
-		.addField("!help", "Will give the current command list")
-		.addField("!ping", "WIll show the ping time for the bot")
-		.addField("!say [text]", "Will make the bot say something")
-		.addField("!announcement [text]", "Will make the bot say an announcement and tag everyone")
-		message.channel.send({embed})
+		message.channel.send("Command List: gt!help: Will give the current command list; gt!ping: WIll show the ping time for the bot; gt!say [text]: Will make the bot say something; gt!announcement [text]: Will make the bot say an announcement and tag everyone.")
 	}
 
 });
