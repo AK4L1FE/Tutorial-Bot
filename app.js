@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const OwnerID = "309081957604786176";
+
+const prefix = "gt!"
 
 
 const newUsers = [];
