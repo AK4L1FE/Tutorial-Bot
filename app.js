@@ -20,4 +20,4 @@ client.on('guildMemberRemove', (member, guild, name) => {
   cchannel.sendMessage(`Goodbye, ${member}, we will miss you. :slight_frown:`);
 });
 
-client.login('NDQyNzQ0MjIzMjAxMDk5Nzc3.DeGOKA.yFpFReKWxCdIGEY-CD0rnyG2h7o');
+client.login('NDQ0Mzk0NjIzNDE5NTQ3NjQ4.DeIusw.wHLCw0fPFwg9xjBmbs4BGd769UI');
