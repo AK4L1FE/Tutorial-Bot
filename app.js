@@ -23,28 +23,4 @@ client.on('guildMemberRemove', (member, guild, name) => {
   cchannel.sendMessage(`Goodbye, ${member}, we will miss you. :slight_frown:`);
 });
 
-client.on("message", async (message) => {
-	if (message.author.bot) return;
-	if (!message.content.startsWith(prefix)) return;
-	
-	let command = message.content.split(" ")[0];
-	command = command.slice(prefix.length);
-	
-	let args = message.content.split(" ").slice(1);
-	
-	if (command === "ping") {
-		channel.sendMessage(`Pong! Time took: ${Date.now() - message.createdTimestamp} ms`);
-	} else
-
-	if (command === "say") {
-		message.delete()
-		channel.sendMessage(args.join(" "));
-	} else
-
-	if (command == "help") {
-		channel.sendMessage("Command List: gt!help: Will give the current command list; gt!ping: WIll show the ping time for the bot; gt!say [text]: Will make the bot say something; gt!announcement [text]: Will make the bot say an announcement and tag everyone.")
-	}
-
-});
-
 client.login('NDQ0Mzk0NjIzNDE5NTQ3NjQ4.DeIusw.wHLCw0fPFwg9xjBmbs4BGd769UI');
