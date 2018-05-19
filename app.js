@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const newUsers = [];
 
 client.on("ready", (user, client) => {
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+  console.log(`Bot has started, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
