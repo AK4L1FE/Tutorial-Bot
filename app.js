@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 // client.on('',''=>{});
 
-bot.on("ready", async () => {
+bot.on("ready", async (user, bot, guild) => {
    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
     bot.user.setActivity(`${bot.user.username} is online on ${bot.guilds.size} servers!`, {type: 2});
 });
