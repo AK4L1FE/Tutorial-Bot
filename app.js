@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const bot = new Discord.Client();
 const token = require('./settings.json').token;
 const ddiff = require('return-deep-diff');
 client.on('ready', () => {
@@ -8,47 +9,47 @@ client.on('ready', () => {
 
 // client.on('',''=>{});
 
-client.on('guildDelete', guild => {
-  console.log(`I have left ${guild.name} at ${new Date()}`);
+ bot.on("ready", async () => {
+    console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+     bot.user.setActivity(`${bot.user.username} is online on ${bot.guilds.size} servers!`, {type: 2});
+     
+     });
+
+bot.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'welcome-leave');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField(':bust_in_silhouette: | name : ', `${member}`)
+        .addField(':microphone2: | Welcome!', `Welcome to the server, ${member}`)
+        .addField(':id: | User :', "**[" + `${member.id}` + "]**")
+        .addField(':family_mwgb: | You are the member', `${member.guild.memberCount}`)
+        .addField("Name", `<@` + `${member.id}` + `>`, true)
+        .addField('Server', `${member.guild.name}`, true )
+        .setFooter(`**${member.guild.name}**`)
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
 });
 
-client.on('guildCreate', guild => {
-  guild.defaultChannel.sendMessage(`I have joined ${guild.name}`);
-});
+bot.on('guildMemberRemove', member => {
+    let channel = member.guild.channels.find('name', 'welcome-leave');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('Name:', `${member}`)
+        .addField('Has Let the Server', ';(')
+        .addField('Bye Bye :(', 'We will all miss you!')
+        .addField('The server now as', `${member.guild.memberCount}` + " members")
+        .setFooter(`**${member.guild.name}`)
+        .setTimestamp()
 
-client.on('guildMemberAdd', member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage(`Please welcome ${member.user.username} to the server!`);
+        channel.sendEmbed(embed);
 });
-
-client.on('guildMemberRemove', member => {
-  let guild = member.guild;
-  guild.defaultChannel.sendMessage(`Please say goodbye to ${member.user.username} we will miss you!`);
-});
-
-client.on('guildMemberSpeaking', (member, speaking) => {
-  let guild = member.guild;
-  if (member.speaking) {
-    guild.defaultChannel.sendMessage(`${member.user.username} is speaking!`);
-  }
-});
-
-client.on('guildMemberUpdate',(oMember, nMember) => {
-  console.log(ddiff(oMember, nMember));
-});
-
-client.on('guildUpdate',(oGuild, nGuild) => {
-  console.log(ddiff(oGuild, nGuild));
-});
-
-client.on('guildBanAdd',(guild, user) => {
-  guild.defaultChannel.sendMessage(`${user.username} was just banned!`);
-});
-
-client.on('guildBanRemove',(guild, user) => {
-  guild.defaultChannel.sendMessage(`${user.username} was just unbanned!`);
-});
-
 
 var prefix = "~"
 client.on('message', message => {
