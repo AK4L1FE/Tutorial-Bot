@@ -5,17 +5,15 @@ const client = new Discord.Client();
 const newUsers = [];
 
 client.on("ready", (user, client) => {
-  console.log(`Bot has started, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+  console.log(`Bot has started.`); 
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
 client.on("guildCreate", (guild, user, client) => {
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
 client.on("guildDelete", (guild, user, client) => {
-  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
   client.user.setActivity(`Serving ${client.guilds.size} servers`);
 });
 
