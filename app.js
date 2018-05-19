@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const bot = new Discord.Client();
-const token = require('./settings.json').token;
 const ddiff = require('return-deep-diff');
 client.on('ready', () => {
   console.log('I\'m Online\nI\'m Online');
@@ -114,4 +113,4 @@ client.on('message', message => {
 });
 
 
-client.login(token);
+client.login('NDQyNzQ0MjIzMjAxMDk5Nzc3.DeGOKA.yFpFReKWxCdIGEY-CD0rnyG2h7o');
