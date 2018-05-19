@@ -12,7 +12,7 @@ client.on("ready", () => {
 client.on('guildMemberAdd', (member, guild, name) => {
   const cchannel = member.guild.channels.find('name', 'welcome');
   if (!cchannel) return;
-  cchannel.sendMessage(`Welcome to ${guild}, ${member}`);
+  cchannel.sendMessage(`Welcome to ${guild.name}, ${member}`);
 });
 
 client.on('guildMemberRemove', (member, guild, name) => {
