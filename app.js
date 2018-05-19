@@ -10,15 +10,15 @@ client.on("ready", () => {
 });
 
 client.on('guildMemberAdd', (member, guild, name) => {
-  const channel = member.guild.channels.find('name', 'welcome');
-  if (!channel) return;
-  channel.send(`Welcome to ${guild}, ${member}`);
+  const cchannel = member.guild.channels.find('name', 'welcome');
+  if (!cchannel) return;
+  cchannel.send(`Welcome to ${guild}, ${member}`);
 });
 
 client.on('guildMemberRemove', (member, guild, name) => {
-  const channel = member.guild.channels.find('name', 'welcome');
-  if (!channel) return;
-  channel.send(`Goodbye, ${member}, we will miss you`);
+  const cchannel = member.guild.channels.find('name', 'welcome');
+  if (!cchannel) return;
+  cchannel.send(`Goodbye, ${member}, we will miss you`);
 });
 
 client.login('NDQyNzQ0MjIzMjAxMDk5Nzc3.DeGOKA.yFpFReKWxCdIGEY-CD0rnyG2h7o');
