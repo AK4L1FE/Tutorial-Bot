@@ -5,25 +5,25 @@ const bot = new Discord.Client();
 
 const newUsers = [];
 
-bot.on("ready", (user, bot) => {
+client.on("ready", (user, bot, client) => {
   console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
-  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
+  client.user.setActivity(`Serving ${bot.guilds.size} servers`);
 });
 
-bot.on("guildCreate", (guild, user, bot) => {
+client.on("guildCreate", (guild, user, client, bot) => {
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
+  client.user.setActivity(`Serving ${bot.guilds.size} servers`);
 });
 
-bot.on("guildDelete", (guild, user, bot) => {
+client.on("guildDelete", (guild, user, client, bot) => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  bot.user.setActivity(`Serving ${bot.guilds.size} servers`);
+  client.user.setActivity(`Serving ${bot.guilds.size} servers`);
 });
 
 client.on('guildMemberAdd', (member, guild, name, server) => {
   const cchannel = member.guild.channels.find('name', 'welcome');
   if (!cchannel) return;
-  cchannel.sendMessage(`Welcome to ${server}, ${member}`);
+  cchannel.sendMessage(`Welcome to ${member.guild.name}, ${member}`);
 });
 
 client.on('guildMemberRemove', (member, guild, name) => {
