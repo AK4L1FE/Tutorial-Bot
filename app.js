@@ -7,8 +7,12 @@ const prefix = "gt!"
 
 const newUsers = [];
 
-client.on("ready", (user, client, bot) => {
-  console.log(`Bot has started.`);
+client.on("ready", async () => {
+  
+  console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
+  client.user.setStatus('dnd');
+  client.user.setActivity(`${client.user.username} is online on ${client.guilds.size} servers!`, {type: "PLAYING"});
+  
 });
 
 client.on('guildMemberAdd', (member, guild, name, server) => {
