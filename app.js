@@ -11,7 +11,7 @@ client.on("ready", async () => {
   
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
   client.user.setStatus('dnd');
-  client.user.setActivity(`${client.user.username} is online on ${client.guilds.size} servers!`, {type: "PLAYING"});
+  client.user.setGame(`${client.user.username} is online on ${client.guilds.size} servers!`);
   
 });
 
