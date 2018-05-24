@@ -8,8 +8,6 @@ const prefix = "gt!"
 
 const newUsers = [];
 
-let adminsrole = message.member.hasPermission("ADMINISTRATOR");
-
 client.on("ready", async () => {
   
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
@@ -20,12 +18,14 @@ client.on("ready", async () => {
 
 client.on('guildMemberAdd', (member, message, guild, name, server) => {
   const welcomechannel = member.guild.channels.find(`name`, "welcome");
+  let adminsrole = message.member.hasPermission("ADMINISTRATOR");
   if (!welcomechannel) return message.adminsrole.send(`${guild.name} doesn't have a welcome channel, please add one`);
   welcomechannel.sendMessage(`${member}, welcome to ${member.guild.name}!!! :laughing:`);
 });
 
 client.on('guildMemberRemove', (member, guild, name, message) => {
   const welcomechannel = member.guild.channels.find(`name`, "welcome");
+  let adminsrole = message.member.hasPermission("ADMINISTRATOR");
   if (!welcomechannel) return message.adminsrole.send(`${guild.name} doesn't have a welcome channel, please add one`);
   welcomechannel.sendMessage(`Goodbye, ${member}, we will miss you. :slight_frown:`);
 });
