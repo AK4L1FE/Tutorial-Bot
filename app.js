@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client Discord.Client();
+const client = Discord.Client();
 const fs = require('fs');
 const db = require('quick.db');
 const OwnerID = "309081957604786176";
