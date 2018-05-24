@@ -1,7 +1,6 @@
 const discord = require('discord.js');
 const client = new discord.Client();
 const fs = require('fs');
-const db = require('quick.db');
 const OwnerID = "309081957604786176";
 
 const prefix = "gt!"
