@@ -2,12 +2,13 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const fs = require('fs');
 const OwnerID = "309081957604786176";
-const adminsrole = message.member.hasPermission("ADMINISTRATOR");
 
 const prefix = "gt!"
 
 
 const newUsers = [];
+
+let adminsrole = message.member.hasPermission("ADMINISTRATOR");
 
 client.on("ready", async () => {
   
