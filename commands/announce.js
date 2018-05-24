@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
  let say_msg = args.slice().join(" ");
-message.channel.send(`@everyone`, say_msg);
+message.channel.send(`@everyone` say_msg);
   message.delete();
 }
 
