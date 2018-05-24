@@ -16,15 +16,19 @@ client.on("ready", async () => {
   
 });
 
+client.on('guildCreate', (guild, name, message, member, channel) => {
+  channel.send(`Hello, thanks for adding me to this server. Just one thing, for me to work, you need to have a welcome channel.`);
+});
+
 client.on('guildMemberAdd', (member, message, guild, name, server) => {
   const welcomechannel = member.guild.channels.find(`name`, "welcome");
-  if (!welcomechannel) return guild.systemChannel.sendMessage(`${member.guild.name} doesn't have a welcome channel, please add one`);
+  if (!welcomechannel) return;
   welcomechannel.sendMessage(`${member}, welcome to ${member.guild.name}!!! :laughing:`);
 });
 
 client.on('guildMemberRemove', (member, guild, name, message) => {
   const welcomechannel = member.guild.channels.find(`name`, "welcome");
-  if (!welcomechannel) return guild.systemChannel.sendMessage(`${member.guild.name} doesn't have a welcome channel, please add one`);
+  if (!welcomechannel) return;
   welcomechannel.sendMessage(`Goodbye, ${member}, we will miss you. :slight_frown:`);
 });
 
