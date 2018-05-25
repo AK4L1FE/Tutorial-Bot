@@ -16,10 +16,6 @@ client.on("ready", async () => {
   
 });
 
-client.on('guildCreate', (guild, name, message, member, channel) => {
-  message.channel.send(`Hello, thanks for adding me to this server. Just one thing, for me to work, you need to have a welcome channel that is called welcome.`);
-});
-
 client.on('guildMemberAdd', (member, message, guild, name, server) => {
   const welcomechannel = member.guild.channels.find(`name`, "welcome");
   if (!welcomechannel) return;
