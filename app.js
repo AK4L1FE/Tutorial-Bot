@@ -20,6 +20,8 @@ client.on('guildMemberAdd', (member, message, guild, name, server) => {
   const welcomechannel = member.guild.channels.find(`name`, "welcome");
   if (!welcomechannel) return;
   welcomechannel.sendMessage(`${member}, welcome to ${member.guild.name}!!! :laughing:`);
+  var role = member.guild.roles.find(`name`, "Users");
+  member.addRole(role);
 });
 
 client.on('guildMemberRemove', (member, guild, name, message) => {
