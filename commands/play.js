@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
