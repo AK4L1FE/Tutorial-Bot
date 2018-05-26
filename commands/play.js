@@ -50,3 +50,16 @@ Please provide a value to select one of the search results ranging from 1-10.
 			}
 			return handleVideo(video, msg, voiceChannel);
 		}
+
+  exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 2
+};
+
+exports.help = {
+  name: 'announce',
+  description: 'Mentions everyone and says what you type in.',
+  usage: 'announce {message}'
+}
