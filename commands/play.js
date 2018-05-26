@@ -51,15 +51,15 @@ Please provide a value to select one of the search results ranging from 1-10.
 			return handleVideo(video, msg, voiceChannel);
 		}
 
-  exports.conf = {
+exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: 2
+  permLevel: 0
 };
 
 exports.help = {
-  name: 'announce',
-  description: 'Mentions everyone and says what you type in.',
-  usage: 'announce {message}'
+  name: 'play',
+  description: 'Plays the song you choose',
+  usage: 'play {message}'
 }
