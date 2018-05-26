@@ -4,4 +4,4 @@ module.exports = async client => { // eslint-disable-line no-unused-vars
   client.user.setStatus('dnd');
   client.user.setPresence({ stream: { stream: `;help | ${client.user.username} is online on ${client.guilds.size} servers!`, type: 3} });
   
-
+};
