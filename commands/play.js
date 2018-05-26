@@ -36,7 +36,7 @@ Please provide a value to select one of the search results ranging from 1-10.
 							maxMatches: 1,
 							time: 10000,
 							errors: ['time']
-						});
+						};
 					} catch (err) {
 						console.error(err);
 						return msg.channel.send('No or invalid value entered, cancelling video selection.');
