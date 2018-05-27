@@ -4,7 +4,7 @@ exports.run = (client, message, params) => {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
     message.reply('check your DMs for the command list');
-    message.author.send(`= Command List =\n\n[Use ${settings.prefix}help <commandname> for details]\n\n${client.commands.map(c => `${settings.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`, {code:'asciidoc'});
+    message.author.send(`= Command List =\n\n[Use ${settings.prefix}help <commandname> for details]\n\n${client.commands.map(c => `${settings.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}\nAnd also, don't forget to join The Z-Mod\'s Official Support Server for more help and suggestions.`, {code:'asciidoc'});
   } else {
     let command = params[0];
     if (client.commands.has(command)) {
