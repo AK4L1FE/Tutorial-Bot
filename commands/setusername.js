@@ -3,7 +3,7 @@ const client = new Discord.Client();
 exports.run = (client, message, args) => {
  let say_msg = args.slice().join(" ");
 
- client.setUsername(say_msg);
+ user.setUsername(say_msg);
 
 };
 
