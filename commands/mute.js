@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
   let modlog = client.channels.find('name', 'mod-log');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'muted');
   if (!modlog) return message.reply('I cannot find a mod-log channel').catch(console.error);
-  if (!muteRole) return message.reply('I cannot find a mute role').catch(console.error);
+  if (!muteRole) return message.reply('I cannot find a muted role').catch(console.error);
   if (reason.length < 1) return message.reply('You must supply a reason for the mute.').catch(console.error);
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to mute them.').catch(console.error);
   const embed = new Discord.RichEmbed()
