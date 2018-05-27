@@ -27,7 +27,7 @@ client.on('guildMemberAdd', (member, message, guild, name, server) => {
 client.on('guildMemberRemove', (member, guild, name, message) => {
   const welcomechannel = member.guild.channels.find(`name`, "welcome");
   if (!welcomechannel) return;
-  welcomechannel.sendMessage(`Goodbye, ${member}, we will miss you. :slight_frown:`);
+  welcomechannel.sendMessage(`Goodbye, ${member.username}, we will miss you. :slight_frown:`);
 });
 
 client.login('NDQ0Mzk0NjIzNDE5NTQ3NjQ4.DeIusw.wHLCw0fPFwg9xjBmbs4BGd769UI');
