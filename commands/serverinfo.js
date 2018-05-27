@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, guild, message, args, name) => {
-return message.channel.send(`Name: ${guild.name}n\Owner: ${guild.ownerID}n\Icon: ${guild.icon}`);
+message.reply(`Name: ${guild.name}n\Owner: ${guild.ownerID}n\Icon: ${guild.icon}`);
 };
 
 exports.conf = {
