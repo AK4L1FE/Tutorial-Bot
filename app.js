@@ -12,7 +12,7 @@ client.on("ready", async () => {
   
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
   client.user.setStatus('dnd');
-  client.user.setPresence({ stream: { stream: `${client.user.username} is online on ${client.guilds.size} servers!`, type: 3} });
+  client.user.setPresence({ stream: { stream: `I\'m online on ${client.guilds.size} server!`, type: 3} });
   
 });
 
