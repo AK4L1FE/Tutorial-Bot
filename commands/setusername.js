@@ -16,5 +16,5 @@ exports.conf = {
 
 exports.help = {
   name: 'setusername',
-  description: 'Sets the bot's username,can only be used by the owner.',
+  description: 'Sets the bots username,can only be used by the owner.',
   usage: 'setusername {message}'
