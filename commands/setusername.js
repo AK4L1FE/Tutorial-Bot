@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
 
  client.setUsername(say_msg);
 
-}
+};
 
 exports.conf = {
   enabled: true,
@@ -18,3 +18,4 @@ exports.help = {
   name: 'setusername',
   description: 'Sets the bots username,can only be used by the owner.',
   usage: 'setusername {message}'
+};
