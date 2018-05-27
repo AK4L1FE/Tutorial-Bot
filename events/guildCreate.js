@@ -1,4 +1,4 @@
-module.exports = async client => {
+module.exports = async (client, member) => {
   console.log('I joined a new server!!!');
   const bchannel = member.guild.channels.find(`name`, "general");
   if (!bchannel) return;
