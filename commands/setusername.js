@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, user) => {
  let say_msg = args.slice().join(" ");
 
  user.setUsername(say_msg);
