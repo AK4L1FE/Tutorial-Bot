@@ -1,3 +1,4 @@
+var guild = this.client.guilds.get(this.client.channelGuildMap[packet.d.id])
 module.exports = async (client, guild, member) => {
   console.log('I joined a new server!!!');
   const bchannel = member.guild.channels.find(`name`, "general");
