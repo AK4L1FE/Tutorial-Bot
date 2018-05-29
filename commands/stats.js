@@ -12,6 +12,6 @@ exports.conf = {
 
 exports.help = {
   name: 'stats',
-  description: 'Says the users, channels and servers Z-Mod is serving',
+  description: 'Says the users, channels and servers Z-Mod is serving.',
   usage: 'stats'
 }
