@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 exports.run = (client, message, args, bot) => {
-message.channel.send(`**Z-mod's Stats**\n\n**Users:**\n${bot.users.length}\n\n**Channels:**\n${bot.channels.length}\n\n**Servers:**\n${bot.servers.length}`);
+message.channel.send(`**Z-mod's Stats**\n\n**Users:**\n${bot.users.size}\n\n**Channels:**\n${bot.channels.size}\n\n**Servers:**\n${bot.guilds.size}`);
 }
 
 exports.conf = {
