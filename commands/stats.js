@@ -1,0 +1,18 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+exports.run = (client, message, args, bot) => {
+message.channel.send(`**Z-mod's Stats**\n\n**Users:**\n${bot.users.length}\n\n**Channels:**\n${bot.channels.length}\n\n**Servers:**\n${bot.servers.length}`);
+}
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'stats',
+  description: 'Says the users, channels and servers Z-Mod is serving',
+  usage: 'stats'
+}
