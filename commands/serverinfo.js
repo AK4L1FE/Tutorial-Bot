@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-exports.run = (client, message, args, guild, message.guild) => {
-message.channel.send(`**${guild.name}** ${guild.iconURL}\n\n**Members and Bots:**\n${guild.memberCount}\n\n**When it was created:**\n${guild.createdAt}\n\n**Owner:**\n@${guild.ownerID}\n\n**Verification level:**\n${guild.verificationLevel}\n\n**Region:**\n${guild.region}`);
+exports.run = (client, message, args, message.guild) => {
+message.channel.send(`**${message.guild.name}** ${message.guild.iconURL}\n\n**Members and Bots:**\n${message.guild.memberCount}\n\n**When it was created:**\n${message.guild.createdAt}\n\n**Owner:**\n@${message.guild.ownerID}\n\n**Verification level:**\n${message.guild.verificationLevel}\n\n**Region:**\n${message.guild.region}`);
 }
 
 exports.conf = {
