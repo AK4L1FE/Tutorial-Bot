@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
       });
       
       message.guild.channels.forEach(async (channel, id) => {
-        await channel.overwritePermissions(role, {
+        await channel.overwritePermissions(rolek, {
           SEND_MESSAGES: false,
           ADD_REACTIONS: false
         });
