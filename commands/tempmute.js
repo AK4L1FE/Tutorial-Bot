@@ -27,8 +27,8 @@ exports.run = (client, message, args, params, setTimeout, ms) => {
   setTimeout(function() {
     user.removeRole(muteRole.id);
     message.channel.send(`${user}, you've been muted.`);
-  }
-}, ms(time));
+  }, ms(time));
+};
 
 exports.conf = {
   enabled: true,
