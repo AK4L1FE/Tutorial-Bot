@@ -12,6 +12,6 @@ exports.conf = {
 
 exports.help = {
   name: 'botinfo',
-  description: 'Displays the bot\'s information.',
+  description: 'Displays Z-Mod\'a information.',
   usage: 'botinfo'
 };
