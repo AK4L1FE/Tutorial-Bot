@@ -5,8 +5,8 @@ exports.run = async (client, message, args) => {
   let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
   if (!toMute) return message.channel.sendMessage("You did not specify a user mention or ID!");
   
-  if (toMute.id === message.author.id) return message.chennel.sendMessage("You cannot mute yourself.");
-  if (toMute.highestRole.position >= message.member.highestRole.position) return message.channel.send("You cannot mute a member who is higher or has the same role as you.");
+  if (toMute.id === message.author.id) return message.channel.sendMessage("You cannot mute yourself.");
+  if (toMute.highestRole.position >= message.member.highestRole.position) return message.channel.sendMessage("You cannot mute a member who is higher or has the same role as you.");
   
   let rolek = message.guild.roles.find("name", "Muted");
   if (!rolek) {
