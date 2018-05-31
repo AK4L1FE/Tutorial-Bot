@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("You do not have manage messages.");
 
   let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
