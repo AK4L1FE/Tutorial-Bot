@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const ms = require('ms');
 exports.run = (client, message, args, params, setTimeout, ms) => {
+  const ms = require('ms');
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
   let modlog = client.channels.find('name', 'mod-log');
