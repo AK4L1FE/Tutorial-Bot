@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
   const embed = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
-    .addField('Action:', 'Un/Mute')
+    .addField('Action:', 'Mute')
     .addField('User:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
     .addField('Reason', reason);
@@ -19,9 +19,6 @@ exports.run = (client, message, args) => {
   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('I do not have the correct permissions.').catch(console.error);
 
   if (message.guild.member(user).roles.has(muteRole.id)) {
-    message.guild.member(user).removeRole(muteRole).then(() => {
-    });
-  } else {
     message.guild.member(user).addRole(muteRole).then(() => {
     });
   }
@@ -37,6 +34,6 @@ exports.conf = {
 
 exports.help = {
   name: 'mute',
-  description: 'Mutes or unmutes a mentioned user, needing to have a muted role.',
+  description: 'Mutes a mentioned user, needing to have a muted role.',
   usage: 'un/mute [mention] [reason]'
 };
