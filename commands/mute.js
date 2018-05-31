@@ -37,6 +37,6 @@ exports.conf = {
 
 exports.help = {
   name: 'mute',
-  description: 'Mutes or unmutes a mentioned user, needing to have a muted role and a mod-log channel.',
+  description: 'Mutes or unmutes a mentioned user, needing to have a muted role.',
   usage: 'un/mute [mention] [reason]'
 };
