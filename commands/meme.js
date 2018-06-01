@@ -5,8 +5,8 @@ const { request} = await superagent
     .set('Authorization', 'Token 90c394ab0eddb46cf8e7b9ced143f792cb254a89')
     .then(function(res) {
          message.channel.send(res.url)
-    }
-});
+    });
+};
 
 exports.conf = {
   enabled: true,
