@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const superagent = require('superagent');
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, request) => {
 const {request} = await superagent
     .get('https://api.ksoft.si/meme/random-meme')
     .set('Authorization', 'Token 90c394ab0eddb46cf8e7b9ced143f792cb254a89')
