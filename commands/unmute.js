@@ -28,9 +28,9 @@ exports.run = async (client, message, args) => {
     }
   }
   
-  if(toMute.roles.has(rolek.id)) return message.channel.sendMessage("This user is already unmuted!");
+  if(toUnMute.roles.has(rolek.id)) return message.channel.sendMessage("This user is already unmuted!");
   
-  await toMute.removeRole(rolek);
+  await toUnMute.removeRole(rolek);
   message.channel.sendMessage("I have unmuted him.");
 };
 
