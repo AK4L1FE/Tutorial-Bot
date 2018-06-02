@@ -16,6 +16,7 @@
     "snekfetch": "^4.0.0",
     "memejs": "^1.0.7",
     "ytdl-core": "^0.20.4",
-    "node-opus": "^0.3.0"
+    "node-opus": "^0.3.0",
+    "ffmpeg": "^0.0.4"
   }
 }
