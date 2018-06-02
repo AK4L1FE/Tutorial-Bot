@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const YTDL = require("ytdl-core");
+var ffmpeg = require('ffmpeg');
 exports.run = (client, message, args, servers) => {
   if (!args[0]) {
     message.channel.send(`Please provide a link.`);
