@@ -17,6 +17,7 @@
     "memejs": "^1.0.7",
     "ytdl-core": "^0.20.4",
     "node-opus": "^0.3.0",
-    "ffmpeg": "^0.0.4"
+    "ffmpeg": "^0.0.4",
+    "opusscript": "^0.0.6"
   }
 }
