@@ -1,12 +1,17 @@
 const Discord = require('discord.js');
 const YTDL = require("ytdl-core");
-exports.run = (client, message, args) => {
+exports.run = (client, message, args, servers) => {
   if (!args[1]) {
-    message.channel.send(`You must be in a voice channel`);
+    message.channel.send(`Please provide a link.`);
     return;
   };
   
   if (!message.member.voiceChannel) {
+    message.channel.send(`You must be a voice channel.`);
+    return;
+  };
+  
+  if (!servers[message.guild.id]) servers[message.guild.id] = {
     queue: []
   };
   
