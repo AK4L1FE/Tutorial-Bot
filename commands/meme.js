@@ -1,3 +1,7 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const meme = require('memejs');
+
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   meme(function(data) {
   const embed = new Discord.RichEmbed()
