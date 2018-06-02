@@ -1,23 +1,26 @@
-const Discord = require('discord.js');
-const snekfetch = require('snekfetch');
-exports.run = async (client, message, args) => {
-const {request} = await snekfetch
-    .get('https://api.ksoft.si/meme/random-meme')
-    .set('Authorization', 'Token 90c394ab0eddb46cf8e7b9ced143f792cb254a89')
-    .then(function(res) {
-         message.channel.send(res.url)
-    });
-};
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const meme = require('memejs');
+
+exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+  meme(function(data) {
+  const embed = new Discord.RichEmbed()
+  .setTitle(data.title[0])
+  .setColor("#7d1616")
+  .setImage(data.url[0])
+  message.delete().catch(O_o => {});
+  message.channel.send({embed});
+  })};
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
-  permLevel: 0
+  aliases: ["meme", "memez"],
+  permLevel: "User"
 };
 
 exports.help = {
-  name: 'meme',
-  description: 'Sends Random Memes.',
-  usage: 'meme'
+  name: "meme",
+  description: "Memez 4 life",
+  usage: "meme"
 };
