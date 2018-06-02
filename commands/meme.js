@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const superagent = require('snekfetch');
-exports.run = async (client, message, args, snekfetch) => {
+const snekfetch = require('snekfetch');
+exports.run = async (client, message, args) => {
 const request = await snekfetch
     .get('https://api.ksoft.si/meme/random-meme')
     .set('Authorization', 'Token 90c394ab0eddb46cf8e7b9ced143f792cb254a89')
