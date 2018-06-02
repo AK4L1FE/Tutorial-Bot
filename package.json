@@ -13,6 +13,7 @@
     "discord.js": "^11.1.0",
     "moment": "^2.18.1",
     "ms": "^0.7.3",
-    "snekfetch": "^4.0.0"
+    "snekfetch": "^4.0.0",
+    "memejs": "^1.0.7"
   }
 }
