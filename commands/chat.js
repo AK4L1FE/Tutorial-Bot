@@ -18,7 +18,7 @@ exports.conf = {
 
 exports.help = {
   name: 'chat',
-  description: 'CleverBot.',
+  description: 'CleverBot.(Slow answer)',
   usage: 'chat {message}'
 };
 
