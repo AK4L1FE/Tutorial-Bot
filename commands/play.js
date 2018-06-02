@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const YTDL = require("ytdl-core");
-exports.run = (client, message, args, function) => {
+exports.run = (client, message, args) => {
   if (!args[1]) {
     message.channel.send(`You must be in a voice channel`);
     return;
