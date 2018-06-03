@@ -9,4 +9,4 @@ module.exports = async client => { // eslint-disable-line no-unused-vars
   }, [5000]);
  
   
-
+};
