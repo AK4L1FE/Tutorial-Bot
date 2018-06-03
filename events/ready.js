@@ -2,11 +2,6 @@ const chalk = require('chalk');
 module.exports = async client => { // eslint-disable-line no-unused-vars
   console.log(chalk.bgGreen.black('I\'m Online'));
   client.user.setStatus('dnd');
-  setInterval(function() {
-    client.user.setGame(`;;help | ${client.users.size} Users | ${client.guilds.size} Servers`, 'https://www.twitch.tv/ak4l1fe'); 
-    setTimeout(function() {
-      client.user.setGame(`;;help | https://z-mod.glitch.me/`, 'https://www.twitch.tv/ak4l1fe');
-    }, 10000000)
-  }, 5000000)
+    client.user.setGame(`;;help | https://z-mod.glitch.me/ | ${client.users.size} Users | ${client.guilds.size} Servers`, 'https://www.twitch.tv/ak4l1fe'); 
   
 };
