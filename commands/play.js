@@ -47,5 +47,5 @@ exports.conf = {
 exports.help = {
   name: 'play',
   description: 'Plays music.',
-  usage: 'play {message}'
+  usage: 'play {url}'
 }
