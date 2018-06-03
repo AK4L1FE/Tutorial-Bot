@@ -14,10 +14,10 @@ function play (connection, message) {
 });
 }
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, connection) => {
     var server = servers[message.guild.id];
 
-    if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+    if (message.guild.voiceConnection) connection.disconnect();
     return;
         }
 
