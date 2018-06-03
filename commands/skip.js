@@ -10,7 +10,7 @@ function play(connection, message) {
     })
 }
 var servers = {};
-exports.run = (bot, message, args) => {
+exports.run = async (bot, message, args) => {
     //skip
     var server = servers[message.guild.id];
     if (server.dispatcher) server.dispatcher.end();
