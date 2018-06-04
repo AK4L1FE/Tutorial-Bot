@@ -7,9 +7,9 @@ exports.run = async (client, message, args, level, member) => {
   let user = message.mentions.users.first() || message.author;
   const embed = new Discord.RichEmbed()
 
-  .setTitle(`${user.name}`)
+  .setTitle(`${message.user.name}`)
   .setColor("#7d1616")
-  .setImage(member.user.displayAvatarURL)
+  .setImage(user.displayAvatarURL)
   message.delete().catch(O_o => {});
   message.channel.send({embed});
 };
