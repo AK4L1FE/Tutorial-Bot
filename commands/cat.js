@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const superagent = require("superagent");
+
 
 exports.run = async (client, message, args, level, member) => {
+	const superagent = require("superagent");
   const { body } = await superagent
 	.get('aws.random.cat/meow');
 	const embed = new Discord.RichEmbed()
