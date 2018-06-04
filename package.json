@@ -14,7 +14,7 @@
     "discord.js": "^11.1.0",
     "moment": "^2.18.1",
     "ms": "^0.7.3",
-    "snekfetch": "^4.0.0",
+    "superagent": "^3.8.3",
     "memejs": "^1.0.7"
   }
 }
