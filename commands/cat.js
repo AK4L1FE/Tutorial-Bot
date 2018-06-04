@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const snekfetch = require("snekfetch");
 
 exports.run = async (client, message, args, level, member) => {
-  const { body } = await superagent
+  const { body } = await snekfetch
 	.get('aws.random.cat/meow');
 	const embed = new Discord.RichEmbed()
 	.setColor(0x954D23)
