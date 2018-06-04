@@ -3,13 +3,13 @@ const client = new Discord.Client();
 
 
 
-exports.run = async (client, message, args, level) => {
+exports.run = async (client, message, args, level, member) => {
   let user = message.mentions.users.first() || message.author;
   const embed = new Discord.RichEmbed()
 
   .setTitle(`${user.name}`)
   .setColor("#7d1616")
-  .setImage(message.user.displayAvatarURL)
+  .setImage(member.user.displayAvatarURL)
   message.delete().catch(O_o => {});
   message.channel.send({embed});
 };
