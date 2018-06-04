@@ -10,7 +10,7 @@ const embed = new Discord.RichEmbed()
   .setImage(user.displayAvatarURL)
   message.delete().catch(O_o => {});
   message.channel.send({embed});
-  })};
+};
 
 exports.conf = {
   enabled: true,
