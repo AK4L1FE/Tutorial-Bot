@@ -9,7 +9,7 @@ exports.run = async (client, message, args, level, member) => {
 	const embed = new Discord.RichEmbed()
 	.setColor(0x954D23)
 	.setTitle("Meow :cat:")
-	.setImage(body.file)
+	.setImage(body.message)
 	message.channel.send({embed})
 };
   
