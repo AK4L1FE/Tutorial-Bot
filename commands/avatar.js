@@ -1,10 +1,12 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-let user = message.mentions.users.first() || message.author;
+
 
 
 exports.run = async (client, message, args, level) => {
-const embed = new Discord.RichEmbed()
+  let user = message.mentions.users.first() || message.author;
+  const embed = new Discord.RichEmbed()
+
   .setTitle(`${user.name}`)
   .setColor("#7d1616")
   .setImage(user.displayAvatarURL)
