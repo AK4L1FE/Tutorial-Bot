@@ -9,7 +9,7 @@ exports.run = async (client, message, args, level) => {
 
   .setTitle(`${user.name}`)
   .setColor("#7d1616")
-  .setImage(user.displayAvatarURL)
+  .setImage(message.user.displayAvatarURL)
   message.delete().catch(O_o => {});
   message.channel.send({embed});
 };
