@@ -8,7 +8,7 @@ exports.run = async (client, message, args, level, member) => {
     .get('https://dog.ceo/api/breeds/image/random');
     const embed = new Discord.RichEmbed()
     .setColor(0x954D23)
-    .setTitle("Woof :dog2:")
+    .setTitle("Woof")
     .setImage(body.message)
     message.channel.send({embed})
     
