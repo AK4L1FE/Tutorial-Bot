@@ -1,11 +1,10 @@
 const Discord = require("discord.js");
-const fs = require("fs");
 const ms = require("ms");
 
-exports.run = async (bot, message, args) => {
+exports.run = async (bot, message, args, fs) => {
 
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't do that.");
-  const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+  let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!user) return message.reply("I Couldn't find him.");
   let warnlevel = warns[user.id].warns;
