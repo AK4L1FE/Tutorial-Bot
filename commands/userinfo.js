@@ -18,6 +18,10 @@ exports.run = async (bot, message, args) => {
   .setImage(user.displayAvatarURL)
   message.delete().catch(O_o => {});
   message.channel.send({embed});
+  
+  if(!warns[user.id]) warns[user.id] = {
+    warns: 0
+  };
 };
 
 exports.conf = {
