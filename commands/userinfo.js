@@ -4,7 +4,7 @@ const ms = require("ms");
 exports.run = async (bot, message, args, fs) => {
 
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't do that.");
-  let warns = JSON.parse(fs.readFile("./warnings.json", "utf8"));
+  let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!user) return message.reply("I Couldn't find him.");
   let warnlevel = warns[user.id].warns;
@@ -13,7 +13,6 @@ exports.run = async (bot, message, args, fs) => {
   .setTitle(`${user.username}`)
   .setColor("#7d1616")
   .addField("ID:", `${user.id}`)
-  .addField("Number of infractions", `${warnlevel}`)
   .addField("Roles in the server:", `${user.roles}`)
   .setImage(user.displayAvatarURL)
   message.delete().catch(O_o => {});
