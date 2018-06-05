@@ -13,7 +13,7 @@ exports.run = (client, message, args, tools) => {
         .then(cat => {
             const embed = new Discord.RichEmbed()
 
-                .setAuthor("Meow :cat:", message.author.avatarURL)
+                .setAuthor("Meow", message.author.avatarURL)
                 .setImage(cat)
                 .setTimestamp();
             message.channel.send({
