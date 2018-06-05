@@ -20,3 +20,16 @@ exports.run = async (bot, message, args) => {
   message.delete().catch(O_o => {});
   message.channel.send({embed});
 };
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'userinfo',
+  description: 'Displays an users info.',
+  usage: 'userinfo {mention}'
+}
