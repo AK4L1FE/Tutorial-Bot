@@ -13,7 +13,6 @@ exports.run = async (bot, message, args, fs) => {
   .setTitle(`${user.username}`)
   .setColor("#7d1616")
   .addField("ID:", `${user.id}`)
-  .addField("Roles in the server:", `${user.roles}`)
   .setImage(user.displayAvatarURL)
   message.delete().catch(O_o => {});
   message.channel.send({embed});
