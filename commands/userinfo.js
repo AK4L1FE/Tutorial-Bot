@@ -6,7 +6,7 @@ exports.run = async (bot, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't do that.");
   let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-  if(!user) return message.reply("Couldn't find them yo");
+  if(!user) return message.reply("I Couldn't find him.");
   let warnlevel = warns[user.id].warns;
   let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
   const embed = new Discord.RichEmbed()
