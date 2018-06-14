@@ -27,7 +27,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'announce',
-  description: 'Mentions everyone and says what you type in.',
-  usage: 'announce {message}'
+  name: 'setchannel',
+  description: 'Sets/Updates the welcoming and leaving channel.',
+  usage: 'setchannel {channelmention}'
 }
