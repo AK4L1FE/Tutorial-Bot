@@ -14,7 +14,7 @@ exports.run = (bot, message, args, func) => {
 
     // Update Channel
     db.updateText(`messageChannel_${message.guild.id}`, newChannel).then(i => {
-        func.embed(message.channel, `**Successfully updated logging channel to ${message.mentions.channels.first()}**`) // Finally, send in chat that they updated the channel.
+        message.channel.send("Successfully set the welcoming and leaving channel!!! :ok_hand:");
     });
 
 };
