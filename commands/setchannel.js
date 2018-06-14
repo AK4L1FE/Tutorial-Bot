@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
-const db = require('quick.db');
 
-exports.run = (bot, message, args, func) => {
+exports.run = (bot, message, args, func, db) => {
 
     if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Please mention a channel**\n > *~setChannel #channel*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
 
