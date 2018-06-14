@@ -9,7 +9,7 @@ exports.run = (bot, message, args, func) => {
     if (args.join(" ").toUpperCase() === 'NONE') newChannel = ''; // If they wrote the word none, it sets newChannel as empty.
     else newChannel = message.mentions.channels.first().id; // If they actually mentioned a channel, it will set newChannel as that.
 
-    db.updateText(`messageChannel_${message.guild.id}`, newChannel).then(i => {
+    db.add(`messageChannel_${message.guild.id}`, newChannel).then(i => {
         message.channel.send("Successfully set the welcoming and leaving channel!!! :ok_hand:");
     });
 
