@@ -17,6 +17,7 @@
     "memejs": "^1.0.7",
     "ytdl-core": "^0.20.4",
     "opusscript": "^0.0.6",
-    "cleverbot.io": "^1.0.4"
+    "cleverbot.io": "^1.0.4",
+    "quick.db": "^6.3.1"
   }
 }
