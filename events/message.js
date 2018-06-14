@@ -6,6 +6,7 @@ module.exports = message => {
   const command = message.content.split(' ')[0].slice(settings.prefix.length);
   const params = message.content.split(' ').slice(1);
   const perms = client.elevation(message);
+  const db = require('quick.db');
   let cmd;
   if (client.commands.has(command)) {
     cmd = client.commands.get(command);
@@ -14,7 +15,7 @@ module.exports = message => {
   }
   if (cmd) {
     if (perms < cmd.conf.permLevel) return;
-    cmd.run(client, message, params, perms);
+    cmd.run(client, message, params, perms, db);
   }
 
 };
