@@ -29,7 +29,7 @@ exports.run = (bot, message, args) => {
   .addField("Warned User", `<@${wUser.id}>`)
   .addField("Warned In", message.channel)
   .addField("Number of Warnings", warns[wUser.id].warns)
-  .addField("Reason", reason);
+  .addField("Reason", `${reason}`);
 
   let warnchannel = message.guild.channels.find(`name`, "mod-log");
   if(!warnchannel) return message.reply("Couldn't find channel");
