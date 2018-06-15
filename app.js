@@ -28,7 +28,7 @@ fs.readdir('./commands/', (err, files) => {
     });
   });
 });
-client.on('message', async (message, guild) => {
+client.on('message', async (message, guild, id) => {
 
     let prefixes =JSON.parse(fs.readFileSync('./prefixes.json', 'utf8'));
 
