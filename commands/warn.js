@@ -11,6 +11,7 @@ exports.run = (bot, message, args) => {
   if(!wUser) return message.reply("Couldn't find them yo");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("They waaaay too kewl");
   let reason = args.join(" ").slice(22);
+  if(!reason) = return message.channel.send("You need to provide a reason");
 
   if(!warns[wUser.id]) warns[wUser.id] = {
     warns: 0
