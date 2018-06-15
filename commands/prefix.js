@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
+  const fs = require('fs');
   if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("No no no. You don't have permissions for that.");
   if(!args[0] || args[0 == "help"]) return message.reply("Usage: !prefix <desired prefix here>");
 
@@ -30,7 +31,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'prefix',
+  name: 'setprefix',
   description: 'Changes a prefix to your chosen custom prefix.',
-  usage: 'prefix {newprefix}'
+  usage: 'setprefix {newprefix}'
 }
