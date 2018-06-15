@@ -41,8 +41,8 @@ client.on('message', async (message, guild, id) => {
 
     let prefix = prefixes[message.guild.id].prefixes;
     if (message.author.bot) return;
-    if (!message.content.startsWith(settings.prefix)) return;
-    const command = message.content.split(' ')[0].slice(settings.prefix.length);
+    if (!message.content.startsWith(prefix)) return;
+    const command = message.content.split(' ')[0].slice(prefix.length);
     const params = message.content.split(' ').slice(1);
     const perms = client.elevation(message);
     let cmd;
