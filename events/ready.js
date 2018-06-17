@@ -8,7 +8,7 @@ module.exports = async client => { // eslint-disable-line no-unused-vars
     client.user.setGame(`Join the Support Server!!!`, 'https://www.twitch.tv/ak4l1fe');
     client.user.setGame(`If it gets 110 members, music commands!!!`, 'https://www.twitch.tv/ak4l1fe');
 //random status'es in here
-  }, [4000]);
+  }, [10000]);
  
   
 };
