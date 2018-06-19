@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
     message.channel.send(`= Command List =\n\n[Use ${settings.prefix}help <commandname> for details]\n\n${client.commands.map(c => `${settings.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}\nFor further help, please join The Z-Mod\'s Official Support Server for more help and suggestions: https://discord.gg/U3hbwrt`, {code:'asciidoc'});
-    message.react(check, cross);
+    message.react(`${check}`, ${cross});
   } else {
     let command = params[0];
     if (client.commands.has(command)) {
