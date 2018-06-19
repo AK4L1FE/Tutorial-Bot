@@ -6,7 +6,7 @@ exports.run = (client, message, params, reaction) => {
     message.channel.send("If you want command list, react with the checkmark along with me, and if you don't want it, react with the crossmark along with me.");
     message.react("458396576273137674");
     message.react("458397350201917453");
-    if(message.author.reaction.emoji.id== "458396576273137674") {
+    if(message.author.reaction.id== "458396576273137674") {
       message.channel.send(`= Command List =\n\n[Use ${settings.prefix}help <commandname> for details]\n\n${client.commands.map(c => `${settings.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}\nFor further help, please join The Z-Mod\'s Official Support Server for more help and suggestions: https://discord.gg/U3hbwrt`, {code:'asciidoc'});
     } else if(reaction.emoji.id== "458397350201917453") {
       return
