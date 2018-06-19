@@ -3,7 +3,7 @@ exports.run = (client, message, params, reaction) => {
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    message.channel.send("Command list: react with the checkmark along with me. Return: react with the crossmark along with me.");
+    message.channel.send("If you want command list, react with the checkmark along with me, and if you don't want it, react with the crossmark along with me.");
     message.react("458396576273137674");
     message.react("458397350201917453");
     if(reaction.emoji.id== "458396576273137674") {
