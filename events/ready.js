@@ -6,7 +6,7 @@ module.exports = async client => { // eslint-disable-line no-unused-vars
     client.user.setGame(`;help | ${client.users.size} Users | ${client.guilds.size} Servers`, 'https://www.twitch.tv/hyp1nsurgerbot'); 
     client.user.setGame(`Join the Support Server!!!`, 'https://www.twitch.tv/hyp1nsurgerbot');
 //random status'es in here
-  }, [10000]);
+  }, [5000]);
  
   
 };
